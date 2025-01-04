@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django_nyt-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django_nyt-{{ version }}.tar.gz
   sha256: 47660e56509c9e0fd21c2e590b4fb7a78ebd903b1d987ee81bf6a0ac3352b4a1
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.5
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - django >=2.2,<4.3
 
 test:
@@ -30,6 +30,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/django-wiki/django-nyt
