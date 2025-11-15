@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: django-nyt
-  version: "1.4.2"
+  version: "1.5.0"
 
 package:
   name: ${{ name|lower }}
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/django_nyt-${{ version }}.tar.gz
-  sha256: 1917cab2fc1d75bd99612b672c1555311515f55ee4ad51cb910f3ecc5516e666
+  sha256: 4b35117b65219dafa849b0b994118f65590b3f6340ede573cdbf51dcd6a59f74
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
