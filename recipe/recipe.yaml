@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: django-nyt
-  version: 1.6.0
+  version: 1.6.1
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/django_nyt-${{ version }}.tar.gz
-  sha256: 8e3ca3d4bf6d91d6adfe10df6b0dc37b48e24cacd790fa93583c01c714cf931b
+  sha256: cc05af64718c21110352cbec1e76897212779c6ea221020fcf7b596493a3ba12
 
 build:
   number: 0
@@ -25,8 +25,7 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }},<4.0
-    - django >=4.2,<6.1
-    - channels
+    - django >=4.2,<6.2
 tests:
   - python:
       imports:
